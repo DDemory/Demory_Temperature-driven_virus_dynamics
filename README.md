@@ -16,7 +16,7 @@ This code is archived on Zenodo: XXX
 - **outputs:** figure outputs in eps.
 - **parameters:** hyper-parameters of the temperature-driven functions and ecological state biogeography estimates.
 
-**Additional packages:** Figure 5 was generated using the M_Map package (Pawlowicz 2020).
+**Additional packages:** Figure 5 was generated using the M_Map package (Pawlowicz 2020). You need to download it at https://www.eoas.ubc.ca/~rich/map.html and add the m_map folder to your directory.
 
 **Figure License:** CC-BY-4.0 Code License: MIT
 
