@@ -5,7 +5,7 @@ David Demory and collaborators, August 18, 2020 School of Biological Sciences Ge
 **Code for:** A thermal trade-off between viral production and degradation drives phytoplankton-virus population dynamics.
 
 A preprint of the manuscript can be found on BioRxiv: XXX
-This code is archived on Zenodo: [![DOI](https://zenodo.org/badge/196264197.svg)](https://zenodo.org/badge/latestdoi/196264197)
+This code is archived on Zenodo: [![DOI](https://zenodo.org/badge/288514967.svg)](https://zenodo.org/badge/latestdoi/288514967)
 
 **Instructions:** all codes are written in MATLAB. To plot the figures, you need (1) to modify the folder path in path_setup.m. and (2) run path_setup.m before running other codes.
 
