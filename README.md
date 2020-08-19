@@ -13,7 +13,7 @@ This code is archived on Zenodo: [![DOI](https://zenodo.org/badge/288514967.svg)
 **Folder descriptions:**
 - **data:** contains experimental data from Demory et al. 2017. (1st column: time in days and 2d column: concentration in particles/ml) and SST projection from IPCC.
 - **figures:** contains matlab figure codes.
-- **functions:** contains additional function codes needed to plot the figures: ODE system, etc., temperature-driven functions, etc.
+- **functions:** contains additional function codes needed to plot the figures: ODE system, temperature-driven functions, etc.
 - **outputs:** figure outputs in eps.
 - **parameters:** hyper-parameters of the temperature-driven functions and ecological state biogeography estimates.
 
