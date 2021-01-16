@@ -6,7 +6,7 @@ David Demory and collaborators, Jannuary 16, 2021 School of Biological Sciences 
 
 A preprint of the manuscript can be found on BioRxiv: [link](https://doi.org/10.1101/2020.08.18.256156)
 
-This code is archived on Zenodo: [![DOI](https://zenodo.org/badge/288514967.svg)](https://zenodo.org/badge/latestdoi/288514967)
+This code is archived on Zenodo: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4445347.svg)](https://doi.org/10.5281/zenodo.4445347)
 
 **Instructions:** all codes are written in MATLAB. To plot the figures or do the analyses, you need (1) to modify the folder path in path_setup.m. and (2) run path_setup.m before running other codes.
 
