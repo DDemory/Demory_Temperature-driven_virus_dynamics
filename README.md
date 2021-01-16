@@ -12,7 +12,7 @@ This code is archived on Zenodo: [![DOI](https://zenodo.org/badge/288514967.svg)
 
 **Folder descriptions:**
 - **data:** contains experimental data from Demory et al. 2017. (1st column: time in days and 2d column: concentration in particles/ml) and SST projection from IPCC.
-- ** analysis:** contains matlab analysis codes.
+- **analysis:** contains matlab analysis codes.
 - **figures:** contains matlab figure codes.
 - **functions:** contains additional function codes needed to plot the figures: ODE system, temperature-driven functions, etc.
 - **outputs:** figure outputs in eps.
