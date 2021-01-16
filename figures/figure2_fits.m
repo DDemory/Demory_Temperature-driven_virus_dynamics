@@ -1,13 +1,17 @@
 %% A thermal trade-off between viral production and degradation drives phytoplankton-virus population dynamics
-% Figure 2 -- Model fits for the six temperatures tested experimentally
-% David Demory
+% === Code for: ===
+% Figure 2 -- Model fits for the six temperatures tested experimentally (pair MicB/MicV-B)
+% SI figure 2 and 3 -- Model fits for the 5 temperatures tested experimentally (pairs MicA/MicV-A or MicC/MicV-C)
+% David Demory -- Jan 2021
 
-% Main figure 2: strain 829 (MicB/MicV-B)
-% Supplementary figures 1 and 2: strain 451 (MicA/MicV-A) and 834
-% (MicC/MicV-C)
 
 %% Load parameters and data
-strain = 829; % Choose between 829 (MicB/MicV-B), 451 (MicA/MicV-A) or 834 (MicC/MicV-C)
+strain = 834; % Choose between 829 (MicB/MicV-B), 451 (MicA/MicV-A) or 834 (MicC/MicV-C)
+
+if strain ~= 829 & strain ~= 451 & strain ~= 834
+    disp('Wrong strain number, choose strain = 829, 451 or 834')
+    return
+end
 
 d0 = 0;
 df = 5;
@@ -37,7 +41,12 @@ switch strain
         TT = [9.5,12.5,20,25,27.5,30];
 
         % Model parameters
-        load('pmin_829.mat')
+        load('pmin_829_Arrhenius_v2.mat')
+
+        % pmin linear decay
+        %pmin =[1.1334e+10, 6743, 1.2515e+25, 17349, 1.0013e+09, 1.0808e-06, 39.676, 0.14913, 1.0126e+22,...
+        %    13119, 1.6263e+22, 13264, 17.021, 297.62, 6.5593, 1.2344e+19, 0.001863, 0, ...
+        %    2.0012e-08];
 
         % Load basal model parameters
         load('pmin_H0.mat')
@@ -61,9 +70,8 @@ switch strain
         % Experimental temperatures
         TT = [12.5,20,25,27.5,30];
 
-        % Mode
-        l parameters
-        load('pmin_834.mat')
+        % Model parameters
+        load('pmin_834_Arrhenius_v2.mat')
 
     case 451 % MicA/MicV-A
 
@@ -85,7 +93,7 @@ switch strain
         TT = [12.5,20,25,27.5,30];
 
         % Model parameters
-        load('parameters/pmin_451.mat')
+        load('pmin_451_Arrhenius_v2.mat')
 
 end
 
@@ -234,6 +242,9 @@ for i = 1:nexp;
         ylim([11 17])
         yticks([11 14 17])
         set(gca,'XtickLabel','')
+        if strain == 834 || strain == 451
+            xlabel('Time (day)')
+        end
     elseif i == 6
         ylim([11 17])
         yticks([11 14 17])
@@ -301,43 +312,6 @@ for i = 1:nexp;
         ylim([14 20.5])
         yticks([14 17 20])
     end
-
-    %% AIC and BIC estimations
-    if strain == 829
-        % Interpolation ysim
-        ysim_intH=interp1(tmod,ymod(:,1)+ymod(:,2),tH_data);
-        ysim_intV=interp1(tmod,ymod(:,3)+ymod(:,4),tV_data);
-        ysim_int0H=interp1(tmod,yfit0(:,1)+yfit0(:,2),tH_data);
-        ysim_int0V=interp1(tmod,yfit0(:,3)+yfit0(:,4),tV_data);
-
-        % SSE
-        ecartR_H = sum((ysim_intH-H_data).^2);
-        ecartR_V = sum((ysim_intV-V_data).^2);
-        ecartR0_H = sum((ysim_int0H-H_data).^2);
-        ecartR0_V = sum((ysim_int0V-V_data).^2);
-
-        % number of parameters
-        k0 = 10; % Basal model
-        kT = 19; % Temperature-driven model
-
-        % data size
-        nH = length(H_data);
-        nV = length(V_data);
-
-        % AIC
-        AIC_T = 2*kT + nH*log(ecartR_H/nH) + nV*log(ecartR_V/nV);
-        AIC_0 = 2*k0 + nH*log(ecartR0_H/nH) + nV*log(ecartR0_V/nV);
-
-        % BIC
-        BIC_T = kT*log(nH+nV) + nH*log(ecartR_H/nH) + nV*log(ecartR_V/nV);
-        BIC_0 = k0*log(nH+nV) + nH*log(ecartR0_H/nH) + nV*log(ecartR0_V/nV);
-
-        % Print AIC and BIC results
-        disp('################################################################################')
-        disp(sprintf(' Temperature:  %1.2f',T))
-        disp(sprintf(' Temperature-driven model:  AIC_T = %0.5g,   BIC_T =%0.5g',[AIC_T BIC_T]))
-        disp(sprintf(' Basal-driven model:  AIC_0 = %0.5g,   BIC_0 =%0.5g',[AIC_0 BIC_0]))
-    end
 end
 
 %% Figure clean up
@@ -354,4 +328,10 @@ title('Virus')
 set(findall(gcf,'-property','FontSize'),'FontSize',18)
 
 % Save figure
-print(hfig,'-depsc','-r600','outputs/Figure2_fits.eps')
+if strain == 829
+    print(hfig,'-depsc','-r600',['outputs/Figure2_fits_strain',num2str(strain),'.eps'])
+elseif strain == 451
+    print(hfig,'-depsc','-r600',['outputs/SI_Figure2_fits_strain',num2str(strain),'.eps'])
+elseif strain == 834
+    print(hfig,'-depsc','-r600',['outputs/SI_Figure3_fits_strain',num2str(strain),'.eps'])
+end

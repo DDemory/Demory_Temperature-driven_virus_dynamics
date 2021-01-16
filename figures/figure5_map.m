@@ -1,7 +1,6 @@
 %% A thermal trade-off between viral production and degradation drives phytoplankton-virus population dynamics
-% Figure 5 -- Ecological states biogeogrpahy given SST projection at global
-% scale.
-% David Demory
+% Figure 5 -- Ecological states biogeogrpahy given SST projection at global scale.
+% David Demory -- Jan 2021
 
 %% SST projections
 % Download Temperature % https://cera-www.dkrz.de/WDCC/ui/cerasearch/q?query=*:*&page=0&hierarchy_steps_ss=GFDL_CM2.1_SRESA2_1&entry_type_s=dataset

@@ -1,12 +1,12 @@
 %% A thermal trade-off between viral production and degradation drives phytoplankton-virus population dynamics
 % Figure 3 -- Temperature-driven functions for MicB/MicV-B (strain 829)
-% David Demory
+% David Demory -- Jan 2021
 
 %% Temperature-driven functions
 % Temperature range
 T = [0:0.01:32.5];
 % Hyperparameters of strain 829
-load('pmin_829.mat')
+load('pmin_829_Arrhenius_v2.mat')
 % Calculate model parameters at T
 [mu,K,phi,lambda,epsilon,beta,sigma,delta,omega,m] = Tdriven_fct(T,pmin);
 
@@ -147,4 +147,3 @@ title('Adsorption rate ($\phi$)','Interpreter','latex')
 
 % Save figure
 print(hfig,'-depsc','-r600','outputs/Figure3_parameters.eps')
-

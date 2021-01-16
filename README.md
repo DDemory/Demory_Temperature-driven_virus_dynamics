@@ -1,6 +1,6 @@
 # Demory_Temperature-driven_virus_dynamics
 
-David Demory and collaborators, August 18, 2020 School of Biological Sciences Georgia Institute of Technology
+David Demory and collaborators, Jannuary 16, 2021 School of Biological Sciences Georgia Institute of Technology
 
 **Code for:** A thermal trade-off between viral production and degradation drives phytoplankton-virus population dynamics.
 
@@ -8,10 +8,11 @@ A preprint of the manuscript can be found on BioRxiv: [link](https://doi.org/10.
 
 This code is archived on Zenodo: [![DOI](https://zenodo.org/badge/288514967.svg)](https://zenodo.org/badge/latestdoi/288514967)
 
-**Instructions:** all codes are written in MATLAB. To plot the figures, you need (1) to modify the folder path in path_setup.m. and (2) run path_setup.m before running other codes.
+**Instructions:** all codes are written in MATLAB. To plot the figures or do the analyses, you need (1) to modify the folder path in path_setup.m. and (2) run path_setup.m before running other codes.
 
 **Folder descriptions:**
 - **data:** contains experimental data from Demory et al. 2017. (1st column: time in days and 2d column: concentration in particles/ml) and SST projection from IPCC.
+- ** analysis:** contains matlab analysis codes.
 - **figures:** contains matlab figure codes.
 - **functions:** contains additional function codes needed to plot the figures: ODE system, temperature-driven functions, etc.
 - **outputs:** figure outputs in eps.

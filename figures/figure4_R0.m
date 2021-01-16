@@ -1,7 +1,6 @@
 %% A thermal trade-off between viral production and degradation drives phytoplankton-virus population dynamics
-% Figure 4 -- Ecological states as function of temperature (only fig. b and
-% c.)
-% David Demory
+% Figure 4 -- Ecological states as function of temperature (only fig. b and c.)
+% David Demory -- Jan 2021
 
 %% FONCTION DE LA TEMPERATURE -------------------------------------------------
 % Temperature range
@@ -13,7 +12,7 @@ names = {'Mic-B/MicV-B','Mic-A/MicV-A','Mic-C/MicV-C'};
 % Thermal niche initiation
 EpiNiche = []; RfgNiche = []; DiffNiche = []; R0max = []; TTopt = []; Mopt =[];
 
-% figure initiaiton 
+% figure initiaiton
 hfig = figure('color','white','position',[0 0 1000 500]);
 
 % loop on the strains
@@ -21,17 +20,17 @@ for s = 1:3
     % Which strain?
     % MicB/MicV-B
     if s == 1
-        load('pmin_829.mat')
+        load('pmin_829_Arrhenius_v2.mat')
         [mu,K,phi,lambda,epsilon,beta,sigma,delta,omega,psi] = Tdriven_fct(T,pmin);
         [Topt,Tmax,muopt,Tmin] = Calculate_CT(pmin);
     % MicA/MicV-A
     elseif s == 2
-        load('pmin_451.mat')
+        load('pmin_451_Arrhenius_v2.mat')
         [mu,K,phi,lambda,epsilon,beta,sigma,delta,omega,psi] = Tdriven_fct(T,pmin);
         [Topt,Tmax,muopt,Tmin] = Calculate_CT(pmin);
     % MicC/MicV-C
     elseif s == 3
-        load('pmin_834.mat')
+        load('pmin_834_Arrhenius_v2.mat')
         [mu,K,phi,lambda,epsilon,beta,sigma,delta,omega,psi] = Tdriven_fct(T,pmin);
         [Topt,Tmax,muopt,Tmin] = Calculate_CT(pmin);
     end
@@ -77,7 +76,7 @@ set(gca,'box','off')
 
 % -- Net growth rate
 plot(T,mu-psi,'-','LineWidth',3)
-% Optimal growth 
+% Optimal growth
 plot([Topt, Topt],[0,max(mu-psi)],'k--')
 plot([Topt Topt],[max(mu-psi) max(mu-psi)],'k.','MarkerSize',20)
 % Maximal growth
@@ -92,9 +91,9 @@ end
 ylim([0 1.1])
 yticks([0,0.5,1])
 
-% -- R0 
+% -- R0
 yyaxis right
-% R0 
+% R0
 plot(T,R0,'-','LineWidth',3)
 % Optimal R0
 plot([ToptR0(1) ToptR0(1)],[0 ,max(R0)],'k--')

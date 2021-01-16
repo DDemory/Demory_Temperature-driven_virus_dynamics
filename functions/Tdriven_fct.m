@@ -24,7 +24,7 @@ phiK = para(6);
 Tphi = para(7);
 phir = para(8);
 numA = phiK;
-denA = phiK+exp(-phir.*(T-Tphi));
+denA = phiK+exp(-phir.*(TK-Tphi));
 phi = numA./denA;
 
 %% --- Lysis rate ---
@@ -56,7 +56,8 @@ sigma = sig1*exp(-d2./TK);
 %delta parameters
 del1 = para(17);
 del2 = para(18);
-delta = del1*exp(T*del2);
+%delta = del1*exp(T*del2);
+delta = del1*exp(-del2./TK);
 
 %% --- viral aggregation ---
 omega = para(19);

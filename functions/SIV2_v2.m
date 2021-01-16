@@ -1,5 +1,5 @@
 function dy = SIV2_v2(t,x,theta,T)
-% ODE System of the temperature-driven model
+% ODE System of the temperature-driven model for a single temperature
 % David Demory
 
 % t     = time

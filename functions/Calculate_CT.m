@@ -1,7 +1,7 @@
 function [Topt,Tmax,muopt,Tmin] = Calculate_CT(para)
 % Estimation of the cardinal temperatures related to the Hinshelwood
 % functions (From Grimmaud thesis 2016)
-% David Demory
+% David Demory - Jan 2021
 
 %% Hinshelwood parameters
 A1 = para(1);

@@ -1,4 +1,5 @@
+
 % Folder name
-folder = "yourpath";
+folder = "your_path";
 % Addpath and all subfolders2020
 addpath(genpath(folder));
