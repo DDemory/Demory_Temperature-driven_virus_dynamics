@@ -2,7 +2,8 @@
 
 David Demory and collaborators, 20 April 2021, School of Biological Sciences Georgia Institute of Technology
 
-**Code for:** A thermal trade‐off between viral production and degradation drives virus‐phytoplankton population dynamics
+**Code for:** A thermal trade‐off between viral production and degradation drives virus‐phytoplankton population dynamics.
+
 David Demory, Joshua S. Weitz, Anne‐Claire Baudoux, Suzanne Touzeau, Natalie Simon, Sophie Rabouille, Antoine Sciandra and Olivier Bernard.
 Ecology Letters, doi: 10.1111/ele.13722
 
